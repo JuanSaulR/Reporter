@@ -1,0 +1,57 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8"></div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Add employee form</h3>
+        </div>
+        <div class="card-body">
+          <form #form="ngForm" (ngSubmit)="updateEmployee()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="name" name="name" [(ngModel)]="employeeDetails.name" class="form-control" id="nameInput" placeholder="Name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="email" name="email" [(ngModel)]="employeeDetails.email" class="form-control" id="emailInput" placeholder="name@example.com">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="phone" [(ngModel)]="employeeDetails.phone" class="form-control" placeholder="Phone" id="phoneInput">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="salary" [(ngModel)]="employeeDetails.salary" class="form-control" placeholder="Salary" id="salaryInput">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="department" [(ngModel)]="employeeDetails.department" class="form-control" placeholder="Deparment" id="departmentInput">
+                </div>
+              </div>
+              <div class="col-md-6">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-primary btn-lg ">Save</button>
+              </div>
+              <div class="col-md-6">
+                <button type="button" class="btn btn-danger btn-lg " (click)="deleteEmployee(employeeDetails.id)">Delete</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
