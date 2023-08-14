@@ -1,0 +1,64 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8"></div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Add report form</h3>
+        </div>
+        <div class="card-body">
+          <form #form="ngForm" (ngSubmit)="addReport()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="title" [(ngModel)]="reportRequest.title" class="form-control" id="nameInput" placeholder="Titulo">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                  </div>
+                  <input class="form-control datepicker" placeholder="Fecha" name="dp" [(ngModel)]="reportRequest.date" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" type="text"/>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="location" [(ngModel)]="reportRequest.location" class="form-control" placeholder="Lugar">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" name="description" [(ngModel)]="reportRequest.description" class="form-control" placeholder="Descripcion">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <ngx-dropzone (change)="onSelect($event)">
+                  <ngx-dropzone-label>Subir fotos.</ngx-dropzone-label>
+                  <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                  </ngx-dropzone-preview>
+                </ngx-dropzone>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- Content of the first column -->
+              </div>
+              <div class="col-md-6 d-flex justify-content-end">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+              </div>
+            </div>            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

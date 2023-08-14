@@ -15,6 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EmployeesListComponent } from 'src/app/components/employees/employees-list/employees-list.component';
 import { EditEmployeeComponent } from 'src/app/components/employees/edit-employee/edit-employee.component';
 import { AddEmployeeComponent } from 'src/app/components/employees/add-employee/add-employee.component';
+import { ReportListComponent } from 'src/app/components/reports/report-list/report-list.component';
+import { CreateReportComponent } from 'src/app/components/reports/create-report/create-report.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -24,7 +27,8 @@ import { AddEmployeeComponent } from 'src/app/components/employees/add-employee/
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ClipboardModule
+    ClipboardModule,
+    NgxDropzoneModule
   ],
   declarations: [
     DashboardComponent,
@@ -34,7 +38,9 @@ import { AddEmployeeComponent } from 'src/app/components/employees/add-employee/
     MapsComponent,
     EmployeesListComponent,
     AddEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    ReportListComponent,
+    CreateReportComponent
   ]
 })
 
